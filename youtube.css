@@ -315,7 +315,7 @@ white-space: nowrap;
   row-gap: 30px ;
 }
 
-@media (max-width : 500px)
+@media (max-width : 300px)
 {
   .video-grid{
     grid-template-columns: 1fr;
@@ -329,6 +329,10 @@ white-space: nowrap;
 {
   .video-grid{
     grid-template-columns: 1fr 1fr;
+  }
+  .p
+  {
+    color: red;
   }
 }
 
