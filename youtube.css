@@ -315,14 +315,15 @@ white-space: nowrap;
   row-gap: 30px ;
 }
 
-@media (max-width : 300px)
+@media (max-width : 400px)
 {
   .video-grid{
     grid-template-columns: 1fr;
     margin-left: 6%
   }
-  .p{
-    color: red;
+  .mypic
+  {
+    margin-right: 10px;
   }
 }
 @media (max-width : 750px)
@@ -335,8 +336,6 @@ white-space: nowrap;
     color: red;
   }
 }
-
-
 
 @media (min-width : 1000px){
   .video-grid{
