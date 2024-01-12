@@ -1,0 +1,361 @@
+p{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+body {
+  margin: 0px;
+  padding-top: 76px;
+  padding-left: 96px;
+  padding-right: 24px;
+  background-color: rgb(248, 248, 248);
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.header{
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left:0px;
+  background-color: white;
+  border-bottom:1px solid rgb(228, 228, 228);
+  z-index: 100;
+}  
+
+.bar{
+  height: 53px;
+ margin-right: 3px;
+  margin-left:13px;
+}
+
+.sidebar{
+ 
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  top: 52px;
+  width: 80px;
+  z-index: 200;
+  
+}
+
+.sidebar-link{
+  height: 133px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  flex-direction: column;
+}
+
+.sidebar-link img{
+  height: 28px;
+  margin-bottom: 3px;
+}
+
+.sidebar-link div{
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.sidebar-link:hover{
+  background-color: rgb(225, 225, 225);
+}
+
+.left-section{
+  /** we force this part o a specefic width which wont change no matter how much we resize the screen  */
+  width: 150px;
+  display: flex;
+  align-items: center;
+
+}
+
+.yt{
+  margin-top: 3px;
+  height: 43px;
+}
+
+.middle-section{
+
+  /** this will make the middle part strech as it wants, like it wont stay stil in one place  */
+  display: flex;
+  flex: 1;
+  margin-left: 80px;
+  margin-right: 69px;
+/** this will force this section not to flex for more than 300px of width and it will stop on that amount of px when we shrink it  */
+  max-width: 550px;
+  
+  align-items: center;
+  
+}
+
+.search-bar{
+ flex: 1;
+ flex-shrink: 0;
+ padding: 9.5px;
+ /* this width is when you shrink it the search bar will stop at 45 px */
+ width: 45px;
+ font-size: 13px;
+ border: 1px solid gray;
+ 
+ border-top-left-radius: 20px;
+ border-bottom-left-radius: 20px;
+
+ /*! inset is for adding a shadow inside the box that we have , and the last number in rgba 0.05 is for the transparenty of the color   */
+
+
+}
+
+.search-bar::placeholder{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.search{
+  background-color: rgb(235, 235, 235) ;
+  padding: 9px;
+   padding-left: 15px;
+   padding-right: 15px;
+  border: 1px solid gray;
+
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+/*! the is for the search icon so it get mixed with the search bar  */
+ margin-left:-1px;
+ margin-right: 13px ;
+
+}
+
+
+.search,
+.mic,
+.upload-container,
+.notf-bell{
+  position: relative;
+}
+
+.search:hover .search-title,
+.mic:hover .mic-title,
+.upload-container:hover .upload-title,
+.notf-bell:hover .notf-title{
+  opacity: 1;
+}
+
+.search-title,
+.mic-title,
+.upload-title,
+.notf-title{
+ opacity: 0;
+ transition: opacity 0.2s;
+ position: absolute;
+ background-color: gray;
+ color: white;
+ padding-left: 6px;
+ padding-right:6px;
+ padding-top:2px;
+ padding-bottom:2px;
+ border-radius: 20px;
+ font-size: 12px;
+ bottom: -21px;
+ left: -1px;
+ /*! THIS IS WHEN U HOVER OVER THIS SECTION WHICH IS THE SEARCH TITLE , IT WILL NO LONGER INCLUDE IT WHEN U HOVER OVER THE SEARCH ICON
+ /*! BASICALLY WAXTE TO MOUSE LSAR SEARCH ICON RADKAY THE SEARCH TITLE BARZA BIT CHNKO MA POINTER EVENTS KRA NONE  */
+ pointer-events: none;
+ /*! and this will make our texr no matter how lomg it is not to wrap means it will be in one line  */
+white-space: nowrap;
+}
+
+.notf-title{
+  bottom: -10px;
+}
+.mic{
+ 
+  padding-left: 12px;
+  padding-right:12px;
+  padding-top:9px;
+  padding-bottom:9px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: none;
+  background-color: rgb(235, 235, 235) ;
+  
+}
+
+.right-section{
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 21px;
+  /** tp prevent this section from shrinking  */
+  flex-shrink: 0.6;
+}
+
+@media (max-width:624px){
+
+  .search-bar{
+    display: none;
+  }
+  .search{
+    border: none;
+    left: 10px;
+    padding-left: 12px;
+    padding-right:12px;
+    padding-top:9px;
+    padding-bottom:9px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  .mic{
+    left:8px;
+  }
+  .right-section{
+    margin-left: 10px;
+
+  }
+  .middle-section{
+    
+    max-width: 100px;
+    margin-right: 10px;
+
+  }
+  
+
+}
+
+.notf-bell{
+  padding: 12px;
+  position: relative;
+}
+.notf-numb{
+  background-color: rgb(206, 0, 0);
+  color: white;
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-top:2px;
+  padding-bottom:2px;
+  border-radius: 10px;
+  position: absolute;
+  top: 6px;
+  right: 3px;
+  font-size: 10px;
+ 
+}
+
+.mypic{
+  width: 35px;
+  border-radius: 20px;
+}
+
+
+
+/** this class is made for the image itself */
+
+.thumb {
+  /* it takes 100% of its container */
+  width: 100%;
+}
+
+/** and this class is for the div of the thumb  */
+
+.thumb-row{
+  margin-bottom: 8px;
+  position: relative;
+}
+
+/*! we set the thumb row to relative and inside it we set the video timer to absloute so its gonna be a part of it  */
+
+.video-time{
+  background-color: rgba(0,0 ,0 ,0.8 );
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+
+ /*!  first one for top and go clockwise w it */
+  padding: 3px 4px 3px 4px;
+
+  border-radius: 3px;
+  position: absolute;
+  bottom: 8px;
+  right: 7px;
+}
+
+/*! so our pfp take 100% of its div */
+/*! UPDATE i change it to 95% of the div size bcuz it look cooler :p */
+.pfp{
+  border-radius: 25px;
+  width: 95%;
+}
+
+.vid-info-grid{
+
+  /** display grid makes ur div as a grid  */
+  /** also in  grid-template-columns: 44px 1fr; 44px and 1fr are the number of columns which are 2 here \
+  /** and 1fr stands for 1 free space means it will take the whole screen view   */
+  display: grid;
+  grid-template-columns: 44px 1fr ;
+}
+
+.video-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr  ;
+  column-gap: 16px ;
+  row-gap: 30px ;
+}
+
+@media (max-width : 750px)
+{
+  .video-grid{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width : 1000px){
+  .video-grid{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width : 1300px){
+  .video-grid{
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.title{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 13.9px;
+  margin-top: 0px;
+  /*! this is the spacing between the font itself */
+  line-height:19px;
+  margin-bottom: 10px;
+ 
+}
+.author,
+.stats{
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(87, 86, 86);
+  line-height: 15px;
+}
+.author{
+  margin-bottom: 4px;
+}
+.title,
+.author,
+.stats{
+  margin-left: 10px;
+}
